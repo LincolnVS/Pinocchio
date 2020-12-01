@@ -1,6 +1,11 @@
 import streamlit as st
 from fastai.vision.all import *
 
+def label_func(f): 
+  if (f[0:4] == "real" or f[1:5] == "real" or f[2:6] == "real"):
+      return False
+  else:
+    return True
 
 def fake_or_real(model,image,accuracy = .99):
 
